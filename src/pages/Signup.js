@@ -192,7 +192,7 @@ const Signup = () => {
         <div className="login-link">
           <Link to="/login">
             <i className="fas fa-sign-in-alt"></i>
-            Already have an account? Sign In
+            Login
           </Link>
         </div>
       </div>
