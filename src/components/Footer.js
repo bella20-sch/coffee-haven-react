@@ -5,7 +5,7 @@ const Footer = () => {
     <footer>
       <div className="footer-container">
         <div className="footer-brand">
-          <h3><i className="fa-solid fa-mug-hot fa-bounce"></i> Coffee Haven</h3>
+          <h3><i className="fas fa-mug-hot fa-flip" style={{'--fa-animation-duration': '2s'}}></i> Coffee Haven</h3>
           <p>Brewing comfort since 2025.</p>
         </div>
     
@@ -22,6 +22,7 @@ const Footer = () => {
         </div>
     
         <div className="footer-bottom">
+          <p>Original user of <strong>Quicksand</strong> & <strong>Font Awesome</strong>.</p>
           <p>&copy; 2025 <strong>Coffee Haven</strong>. All rights reserved.</p>
         </div>
       </div>

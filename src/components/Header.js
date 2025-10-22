@@ -24,7 +24,7 @@ const Header = () => {
     <>
       <nav>
         <Link to="/" className="navbar-brand">
-          <i className="fa-solid fa-mug-hot fa-bounce"></i> | CoffeeHaven
+         <i className="fas fa-mug-hot fa-flip" style={{'--fa-animation-duration': '2s'}}></i> | CoffeeHaven
         </Link>
         <div className="nav-right">
           <button 
