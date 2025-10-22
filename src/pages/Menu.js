@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useCart } from '../contexts/CartContext';
 
 const Menu = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterCategory, setFilterCategory] = useState('All');
+  const { addToCart } = useCart();
 
   const coffeeData = [
     {
@@ -80,6 +82,10 @@ const Menu = () => {
   const CoffeeCard = ({ coffee }) => {
     const [isLiked, setIsLiked] = useState(false);
 
+    const handleAddToCart = () => {
+      addToCart(coffee);
+    };
+
     return (
       <div className="coffee-card">
         <div className="coffee-img">
@@ -95,12 +101,21 @@ const Menu = () => {
             <span className="calories">{coffee.calories}</span>
             <span className="size">{coffee.size}</span>
           </div>
-          <button 
-            className={`like-btn ${isLiked ? 'liked' : ''}`}
-            onClick={() => setIsLiked(!isLiked)}
-          >
-            <i className={isLiked ? 'fas fa-heart' : 'far fa-heart'}></i>
-          </button>
+          <div className="coffee-actions">
+            <button 
+              className={`like-btn ${isLiked ? 'liked' : ''}`}
+              onClick={() => setIsLiked(!isLiked)}
+            >
+              <i className={isLiked ? 'fas fa-heart' : 'far fa-heart'}></i>
+            </button>
+            <button 
+              className="add-to-cart-btn"
+              onClick={handleAddToCart}
+            >
+              <i className="fas fa-plus"></i>
+              Add to Cart
+            </button>
+          </div>
         </div>
       </div>
     );
